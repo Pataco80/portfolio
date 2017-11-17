@@ -14,17 +14,10 @@
     @@include('./inc/nav.html')
     
     <!-- header -->
-    <header class="jumbotron header-anime">
+    <header class="jumbotron header-anime text-center">
       <div class="container">
-        <p class="header-anime__title">Bonjour, tout va bien mon pote !</p>
-        <h1 class="header-anime__subtitle">Je suis Ricardo Do Vale, webdesigner, front-end et apréciateur de café</h1>
-      </div>
-      <div class="header-anime__illustration">
-        <div class="nuages"></div>
-        <div class="maisons"></div>
-        <div class="route"></div>
-        <div class="voitureHaut"></div>
-        <div class="voituresBas"></div>
+        <p class="header-anime__title">Ce que je fais</p>
+        <h1 class="header-anime__subtitle">Voyez certains de mes travaux</h1>
       </div>
     </header><!-- /header -->
     
@@ -34,9 +27,8 @@
         <div class="col-xs-12">
           <h2>Derniers Travaux</h2>
         </div>
-        
-        <!-- card-portfolio -->
-        @@loop('./inc/card-portfolio.html', [
+        <div class="row card-portfolio__container">
+          @@loop('./inc/card-portfolio.html', [
           {
             "title" : "Titre du travail 1",
             "image" : "img/portfolio/01.jpg",
@@ -49,17 +41,40 @@
             "image" : "img/portfolio/02.jpg",
             "alt" : "Titre du travail 2",
             "texte" : "Suspendisse semper tincidunt eleifend. Vestibulum pulvinar lacinia nisl in rutrum. Suspendisse elementum est sit.",
-            "lien" : "Titre du travail 1"
+            "lien" : "Titre du travail 2"
           },
           {
             "title" : "Titre du travail 3",
             "image" : "img/portfolio/03.jpg",
             "alt" : "Titre du travail 3",
             "texte" : "Nullam lobortis semper fringilla. Vestibulum vel sem rutrum quam dictum dictum sed at justo.",
-            "lien" : "Titre du travail 1"
+            "lien" : "Titre du travail 3"
+          },
+          {
+            "title" : "Titre du travail 4",
+            "image" : "img/portfolio/04.jpg",
+            "alt" : "Titre du travail 4",
+            "texte" : "Suspendisse semper tincidunt eleifend. Vestibulum pulvinar lacinia nisl in rutrum. Suspendisse elementum est sit.",
+            "lien" : "Titre du travail 4"
+          },
+          {
+            "title" : "Titre du travail 5",
+            "image" : "img/portfolio/05.jpg",
+            "alt" : "Titre du travail 5",
+            "texte" : "Suspendisse semper tincidunt eleifend. Vestibulum pulvinar lacinia nisl in rutrum. Suspendisse elementum est sit.",
+            "lien" : "Titre du travail 5"
+          },
+          {
+            "title" : "Titre du travail 6",
+            "image" : "img/portfolio/06.jpg",
+            "alt" : "Titre du travail 6",
+            "texte" : "Suspendisse semper tincidunt eleifend. Vestibulum pulvinar lacinia nisl in rutrum. Suspendisse elementum est sit.",
+            "lien" : "Titre du travail 6"
           }
          ])
-
+        </div>
+        <!-- card-portfolio -->
+        
       </section><!-- /.row -->
     </main><!-- /Section "Derniers travaux" -->
     

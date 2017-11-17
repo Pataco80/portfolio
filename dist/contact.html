@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Ricardo Do Vale</title>
+    <link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/contact.css">
+  </head>
+  <body>
+   
+    <!-- Navigation -->
+    <nav class="header-nav">
+  <div class="container">
+    <a href="index.html" class="header-nav__logo">
+      <img src="img/logo.svg" alt="logo Portfolio"></a>
+    <button aria-controls="#mainMenu" class="header-nav__hamburgger" type="button" aria-expanded="false">
+      <div class="header-nav__hamburggerParties">
+        <span class="sr-only">Menu</span>
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </div>
+    </button><!-- /.button hamburger -->
+    <ul id="mainMenu" class="header-nav__menu">
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">A Propos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div><!-- /.container -->
+</nav><!-- /.mainNabigation-->
+    
+    <!-- header -->
+    <header class="jumbotron header-anime text-center">
+      <div class="container">
+        <p class="header-anime__title">On va se taper une bière ?</p>
+        <h1 class="header-anime__subtitle">Contactez-moi et je vous réponderais au plus vite</h1>
+      </div>
+    </header><!-- /header -->
+    
+    <!-- Section "Derniers travaux" -->
+    <main class="container">
+      <section class="row card-portfolio__section">
+        <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+          <form action="" id="contactform">
+            <div class="form-group">
+              <label for="name">Nom</label>
+              <input type="text" class="form-control" id="name" placeholder="Nom Complet">
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" rows="3"></textarea>
+
+            </div>
+
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+          </form>
+        </div>
+        
+        <!-- end contact -->
+        
+      </section><!-- /.row -->
+    </main><!-- /Section "Derniers travaux" -->
+        
+    <!-- Footer -->
+    <footer class="footer">
+  <div class="container">
+    <p class="text-right">social:</p>
+    <ul class="footer-social list-unstyled">
+      <li class="footer-social__line"><a href="#" class="btn-social btn-outline"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+      <li class="footer-social__line"><a href="#" class="btn-social btn-outline"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+      <li class="footer-social__line"><a href="#" class="btn-social btn-outline"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      <li class="footer-social__line"><a href="#" class="btn-social btn-outline"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+      <li class="footer-social__line"><a href="#" class="btn-social btn-outline"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+    </ul><!-- /Social menu -->
+  </div><!-- /.container -->
+</footer><!-- /Footer -->
+    <script src="js/app.js"></script>
+    <script src="js/menu.js"></script>
+  </body>
+</html>

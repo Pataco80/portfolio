@@ -16,7 +16,7 @@ $animationItems: (
 .header-anime {
   background-color: $green;
   padding-bottom: 0;
-  margin-bottom: 0;
+  margin-bottom: 32px;
   padding-top: 96px;
   overflow: hidden;
   
@@ -32,6 +32,8 @@ $animationItems: (
     color: $white;
     font-weight: 300;
     line-height: 1.5;
+    font-family: $heading-font-family;
+    margin-bottom: 2em;
   }
   
   &__illustration {
