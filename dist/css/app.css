@@ -92,24 +92,30 @@ h1, h2, h3, h4, h5, h6, .title {
           display: inline-block; }
           .header-nav__menu li a {
             border-top: none;
+            -webkit-transition: all .3s ease-in-out;
             transition: all .3s ease-in-out; }
             .header-nav__menu li a:hover {
-              transform: translateY(0.5em);
-              box-shadow: 0 5px 15px -10px #000; } }
+              -webkit-transform: translateY(0.5em);
+                      transform: translateY(0.5em);
+              -webkit-box-shadow: 0 5px 15px -10px #000;
+                      box-shadow: 0 5px 15px -10px #000; } }
     .js .header-nav__menu {
       background-color: #4f877e;
-      box-shadow: 15px 25px 70px #000;
+      -webkit-box-shadow: 15px 25px 70px #000;
+              box-shadow: 15px 25px 70px #000;
       position: fixed;
       top: 50px;
       width: 80%;
       left: -100%;
       bottom: 0;
+      -webkit-transition: left 0.5s ease-out;
       transition: left 0.5s ease-out;
       z-index: 1; }
       @media only screen and (min-width: 768px) {
         .js .header-nav__menu {
           background-color: transparent;
-          box-shadow: none;
+          -webkit-box-shadow: none;
+                  box-shadow: none;
           display: inline-block;
           text-align: right;
           height: 50px;
@@ -151,11 +157,21 @@ h1, h2, h3, h4, h5, h6, .title {
     .header-anime__illustration > div {
       display: none; }
 
+@-webkit-keyframes animation_cenario {
+  from {
+    -webkit-transform: translateX(-50%) translateZ(0);
+            transform: translateX(-50%) translateZ(0); }
+  to {
+    -webkit-transform: translateX(0%) translateZ(0);
+            transform: translateX(0%) translateZ(0); } }
+
 @keyframes animation_cenario {
   from {
-    transform: translateX(-50%) translateZ(0); }
+    -webkit-transform: translateX(-50%) translateZ(0);
+            transform: translateX(-50%) translateZ(0); }
   to {
-    transform: translateX(0%) translateZ(0); } }
+    -webkit-transform: translateX(0%) translateZ(0);
+            transform: translateX(0%) translateZ(0); } }
     @media only screen and (min-width: 480px) {
       .header-anime__illustration {
         background-image: url(../img/cenario_all_1530.png); } }
@@ -173,39 +189,64 @@ h1, h2, h3, h4, h5, h6, .title {
           width: 4800px; }
         .header-anime__illustration .nuages {
           background-image: url(../img/cenario_nuages.png);
-          animation: animation_cenario 90s linear infinite reverse; }
+          -webkit-animation: animation_cenario 90s linear infinite reverse;
+                  animation: animation_cenario 90s linear infinite reverse; }
         .header-anime__illustration .maisons {
           background-image: url(../img/cenario_maisons.png);
-          animation: animation_cenario 30s linear infinite reverse; }
+          -webkit-animation: animation_cenario 30s linear infinite reverse;
+                  animation: animation_cenario 30s linear infinite reverse; }
         .header-anime__illustration .route {
           background-image: url(../img/cenario_route.png);
-          animation: animation_cenario 30s linear infinite reverse; }
+          -webkit-animation: animation_cenario 30s linear infinite reverse;
+                  animation: animation_cenario 30s linear infinite reverse; }
         .header-anime__illustration .voitureHaut {
           background-image: url(../img/cenario_voitureHaut.png);
-          animation: animation_cenario 15s linear infinite reverse; }
+          -webkit-animation: animation_cenario 15s linear infinite reverse;
+                  animation: animation_cenario 15s linear infinite reverse; }
         .header-anime__illustration .voituresBas {
           background-image: url(../img/cenario_voituresBas.png);
-          animation: animation_cenario 15s linear infinite; } }
+          -webkit-animation: animation_cenario 15s linear infinite;
+                  animation: animation_cenario 15s linear infinite; } }
 
 .card-portfolio__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0; }
   @media only screen and (min-width: 768px) {
     .card-portfolio__section {
-      flex-direction: row; } }
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
 
 .card-portfolio__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0; }
   @media only screen and (min-width: 768px) {
     .card-portfolio__container {
-      flex-direction: row; } }
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
 
 .card-portfolio__container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex; }
 
 .card-portfolio {
@@ -213,9 +254,16 @@ h1, h2, h3, h4, h5, h6, .title {
   border-radius: 0;
   border: none;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: start; }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start; }
   .card-portfolio:before {
     content: '';
     z-index: -1;
@@ -224,8 +272,10 @@ h1, h2, h3, h4, h5, h6, .title {
     width: 50%;
     height: 20px;
     bottom: 10px;
-    box-shadow: 0 15px 10px #777;
-    transform: rotate(-3deg);
+    -webkit-box-shadow: 0 15px 10px #777;
+            box-shadow: 0 15px 10px #777;
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
     left: 5px; }
   .card-portfolio:after {
     content: '';
@@ -235,8 +285,10 @@ h1, h2, h3, h4, h5, h6, .title {
     width: 50%;
     height: 20px;
     bottom: 10px;
-    box-shadow: 0 15px 10px #777;
-    transform: rotate(3deg);
+    -webkit-box-shadow: 0 15px 10px #777;
+            box-shadow: 0 15px 10px #777;
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
     right: 10px; }
   .card-portfolio__image {
     height: 230px;
@@ -245,33 +297,53 @@ h1, h2, h3, h4, h5, h6, .title {
       width: 100%;
       height: auto;
       opacity: 0.5;
-      transition: opacity .3s linear, transform 1s ease-in; }
+      -webkit-transition: opacity .3s linear, -webkit-transform 1s ease-in;
+      transition: opacity .3s linear, -webkit-transform 1s ease-in;
+      transition: opacity .3s linear, transform 1s ease-in;
+      transition: opacity .3s linear, transform 1s ease-in, -webkit-transform 1s ease-in; }
   .card-portfolio:hover img {
     opacity: 1;
-    transform: scale(1.1) rotate(-2deg); }
+    -webkit-transform: scale(1.1) rotate(-2deg);
+            transform: scale(1.1) rotate(-2deg); }
   .card-portfolio:hover .card-portfolio__btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-content: right;
-    justify-content: center;
-    align-self: flex-end;
+    -ms-flex-line-pack: right;
+        align-content: right;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     margin-right: 10px; }
     .card-portfolio:hover .card-portfolio__btn:hover {
       background-color: #3fcab2;
       color: #fff; }
   .card-portfolio__text {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-grow: 2; }
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2; }
   .card-portfolio__btn {
     background-color: transparent;
     color: #64a59a;
     width: 100px;
     border: none;
     border-radius: 0;
+    -webkit-transition: all .3s linear;
     transition: all .3s linear;
     margin-right: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-self: flex-end; }
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: end;
+        align-self: flex-end; }
 
 .footer {
   background-color: #a5cac4;

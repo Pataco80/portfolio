@@ -2,6 +2,9 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     include = require('gulp-file-include'),
     clean = require('gulp-clean'),
+    autoprefixer = require('gulp-autoprefixer'),
+    uncss = require('gulp-uncss'),
+    imagemin 
     browserSync = require('browser-sync');
 
 // TASKS
@@ -30,6 +33,9 @@ gulp.task('copy', ['clean'], function(){
 gulp.task('sass', function(){
   gulp.src('./src/scss/**/*.scss')
     .pipe(sass())
+    .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
   .pipe(gulp.dest('./dist/css/'));
 })
 
@@ -40,8 +46,17 @@ gulp.task('html', function(){
     .pipe(gulp.dest('./dist/'));
 })
 
+// uncss
+gulp.task('uncss', ['html'], function(){
+  return gulp.src('./dist/components/**/*.css')
+    .pipe(uncss({
+      html: ['./dist/*.html']
+  }))
+  .pipe(gulp.dest('./dist/components/'));
+})
+
 // Server
-gulp.task('serve', ['html'], function(){
+gulp.task('serve', ['uncss'], function(){
   browserSync.init({
     server: {
       baseDir: 'dist'
