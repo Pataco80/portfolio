@@ -1,18 +1,1 @@
-input[type="text"],
-input[type="email"], textarea.form-control {
-  margin-bottom: 35px;
-  -webkit-transition: background .3s;
-  transition: background .3s; }
-  input[type="text"]:focus,
-  input[type="email"]:focus, textarea.form-control:focus {
-    background: #ddd; }
-
-input[type="text"],
-input[type="email"] {
-  padding: 25px 15px; }
-
-textarea.form-control {
-  height: 100px; }
-
-button[type="submit"] {
-  margin-bottom: 2em; }
+input[type=email],input[type=text],textarea.form-control{margin-bottom:35px;transition:background .3s}input[type=email]:focus,input[type=text]:focus,textarea.form-control:focus{background:#ddd}input[type=email],input[type=text]{padding:25px 15px}textarea.form-control{height:100px}button[type=submit]{margin-bottom:2em}

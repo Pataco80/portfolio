@@ -4,7 +4,10 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     autoprefixer = require('gulp-autoprefixer'),
     uncss = require('gulp-uncss'),
-    imagemin 
+    imagemin = require('gulp-imagemin'),
+    cssnano = require('gulp-cssnano'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
     browserSync = require('browser-sync');
 
 // TASKS
@@ -22,9 +25,7 @@ gulp.task('copy', ['clean'], function(){
     'src/components/bootstrap/js/**/*',
     'src/components/font-awesome/css/**/*',
     'src/components/font-awesome/fonts/**/*',
-    'src/css/**/*',
-    'src/js/**/*',
-    'src/img/**/*'
+    'src/js/**/*'
   ], {"base": "src"})
     .pipe(gulp.dest('dist'));
 })
@@ -36,6 +37,7 @@ gulp.task('sass', function(){
     .pipe(autoprefixer({
             browsers: ['last 2 versions']
         }))
+      .pipe(cssnano())
   .pipe(gulp.dest('./dist/css/'));
 })
 
@@ -55,8 +57,17 @@ gulp.task('uncss', ['html'], function(){
   .pipe(gulp.dest('./dist/components/'));
 })
 
+// Image minification
+gulp.task('imagemin', function(){
+  return gulp.src('./src/img/**/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./dist/img/'));
+})
+
+// JavaScript
+
 // Server
-gulp.task('serve', ['uncss'], function(){
+gulp.task('serve', ['html', 'uncss', 'imagemin', 'sass', 'copy'], function(){
   browserSync.init({
     server: {
       baseDir: 'dist'
