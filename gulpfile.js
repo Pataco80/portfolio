@@ -85,7 +85,7 @@ gulp.task('scripts', function(){
 
 // Default
 gulp.task('default', ['copy'], function(){
-  gulp.start(['uncss', 'imagemin', 'sass', 'scripts'])
+  gulp.start(['uncss', 'svgmin', 'imagemin', 'sass', 'scripts'])
 })
 
 // Server

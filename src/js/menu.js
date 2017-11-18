@@ -3,9 +3,9 @@
   
   var btn = document.querySelector('.header-nav__hamburgger');
   var html = document.querySelector('html');
-  var menu = document.querySelector('#mainMenu')
-  var menOpened = false;
+  var menu = document.querySelector('#mainMenu'); // oubli du point virgule
   var classMenu = 'menu-opened';
+  var menOpened = false;
   
   html.addEventListener('click', function(e){
     console.log(this);
@@ -35,7 +35,7 @@
   }
   
   function openMenu(){
-    openMenu = true;
+    menOpened = true; //pas openMenu mais menuOpened
     html.classList.add(classMenu);
     menu.setAttribute('aria-expanded', true);
     btn.setAttribute('aria-expanded', true);

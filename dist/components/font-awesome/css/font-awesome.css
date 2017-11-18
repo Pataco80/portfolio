@@ -11,21 +11,10 @@
   font-weight: normal;
   font-style: normal;
 }
-.fa {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 /* makes the font 33% larger relative to the icon container */
 /* Deprecated as of 4.4.0 */
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
-.fa-bars:before {
-  content: "\f0c9";
-}
 .sr-only {
   position: absolute;
   width: 1px;
