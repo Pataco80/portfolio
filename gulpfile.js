@@ -104,3 +104,6 @@ gulp.task('serve', function(){
     '!./src/inc/icons/*.min.svg'
     ], ['svgmin'])
 });
+
+/* Nouveau commantaire
+une 2ème ligne */
