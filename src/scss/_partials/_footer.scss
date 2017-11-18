@@ -1,6 +1,6 @@
 .footer {
   background-color: $light-green-20;
-  color: $white;
+  color: darken($green, 20%);
   padding: 1em 0;
   
   .footer-social {
@@ -14,10 +14,17 @@
       padding: 0;
       
       a {
-        font-size: 1.5em;
-        color: $white;
+        color: inherit;
         display: block;
         text-align: right;
+        
+        svg {
+          fill: $white;
+          fill: darken($green, 10%);
+          &:hover {
+            fill: darken($green, 30%);
+          }
+        }
       }
     }
 

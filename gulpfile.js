@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     cssnano = require('gulp-cssnano'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
     browserSync = require('browser-sync');
 
 // TASKS
@@ -19,20 +20,19 @@ gulp.task('clean', function(){
 
 // Copy
 gulp.task('copy', ['clean'], function(){
-  gulp.src([
+  return gulp.src([
     'src/components/bootstrap/dist/**/*',
     'src/components/bootstrap/fonts/**/*',
     'src/components/bootstrap/js/**/*',
     'src/components/font-awesome/css/**/*',
-    'src/components/font-awesome/fonts/**/*',
-    'src/js/**/*'
+    'src/components/font-awesome/fonts/**/*'
   ], {"base": "src"})
     .pipe(gulp.dest('dist'));
 })
 
 // Sass
 gulp.task('sass', function(){
-  gulp.src('./src/scss/**/*.scss')
+  return gulp.src('./src/scss/**/*.scss')
     .pipe(sass())
     .pipe(autoprefixer({
             browsers: ['last 2 versions']
@@ -64,10 +64,32 @@ gulp.task('imagemin', function(){
     .pipe(gulp.dest('./dist/img/'));
 })
 
+// Svg Min
+gulp.task('svgmin', function(){
+  
+  return gulp.src(['src/inc/icons/*.svg', '!src/inc/icons/*.min.svg'])
+    .pipe(imagemin())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('src/inc/icons/'))
+})
+
 // JavaScript
+gulp.task('scripts', function(){
+  return gulp.src('./src/js/**/*')
+    .pipe(concat('app.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/js/'));
+})
+
+// Default
+gulp.task('default', ['copy'], function(){
+  gulp.start(['uncss', 'imagemin', 'sass', 'scripts'])
+})
 
 // Server
-gulp.task('serve', ['html', 'uncss', 'imagemin', 'sass', 'copy'], function(){
+gulp.task('serve', function(){
   browserSync.init({
     server: {
       baseDir: 'dist'
@@ -76,4 +98,9 @@ gulp.task('serve', ['html', 'uncss', 'imagemin', 'sass', 'copy'], function(){
   gulp.watch('./dist/**/*').on('change', browserSync.reload)
   gulp.watch('./src/**/*.html', ['html'])
   gulp.watch('./src/scss/**/*.scss', ['sass'])
+  gulp.watch('./src/js/**/*.js', ['scripts'])
+  gulp.watch([
+    './src/inc/icons/*.svg',
+    '!./src/inc/icons/*.min.svg'
+    ], ['svgmin'])
 });
